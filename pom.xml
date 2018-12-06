@@ -5,7 +5,7 @@
   <url>http://github.con/daggerok/java-ee-microservices</url>
   <groupId>com.github.daggerok.blog</groupId>
   <artifactId>parent</artifactId>
-  <version>1.0.8</version>
+  <version>1.0.9-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -172,7 +172,7 @@
   <scm>
     <url>https://github.com/daggerok/java-ee-microservices</url>
     <connection>scm:git:https://github.com/daggerok/java-ee-microservices.git</connection>
-    <tag>v1.0.8</tag>
+    <tag>master</tag>
   </scm>
 
   <profiles>
