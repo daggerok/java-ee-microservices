@@ -31,7 +31,11 @@ script:
 - ./mvnw -pl :parent -Pup
 - docker-compose logs -ft &
 - wait_for 80 8080
-- sleep 15s
-- http :8080/blog/health
+- sleep 25s
+- http :8080/rest-api-jax-rs/health
+- http :8080/rest-api-jax-rs-servlet-initializer/health
+- http :8080/rest-api-struts-json/health
+- http :8080/ui/health
+- http :8080/ui/about
 - ./mvnw -pl :parent -Pdown
 - stop_any 80 8080

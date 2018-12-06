@@ -7,4 +7,8 @@ HEALTHCHECK --timeout=1s --retries=99 \
         CMD wget -q --spider http://127.0.0.1:8080/blog/health \
          || exit 1
 # deployment
-ADD ./target/*.war ${JBOSS_HOME}/standalone/deployments/blog.war
+ADD ./rest-api-jax-rs/target/*.war \
+    ./rest-api-jax-rs-servlet-initializer/target/*.war \
+    ./rest-api-struts-json/target/*.war \
+    ./ui/target/*.war \
+    ${JBOSS_HOME}/standalone/deployments/

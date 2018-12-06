@@ -12,8 +12,8 @@
     <module>rest-api-jax-rs</module>
     <module>rest-api-jax-rs-servlet-initializer</module>
     <module>rest-api-struts-json</module>
-    <module>blog-ear</module>
-    <module>blog</module>
+    <module>ui</module>
+    <!--<module>blog-ear</module>-->
   </modules>
 
   <properties>
@@ -63,6 +63,17 @@
       </dependency>
 
       <dependency>
+        <groupId>com.sparkjava</groupId>
+        <artifactId>spark-core</artifactId>
+        <version>2.7.2</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.5</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>1.18.4</version>
@@ -90,6 +101,7 @@
 
   <build>
     <defaultGoal>clean install</defaultGoal>
+    <finalName>${project.artifactId}</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
