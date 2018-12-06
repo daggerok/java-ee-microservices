@@ -5,7 +5,7 @@
   <url>http://github.con/daggerok/java-ee-microservices</url>
   <groupId>com.github.daggerok.blog</groupId>
   <artifactId>parent</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -150,7 +150,7 @@
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <!-- releaseProfiles configuration will actually force a Maven profile
               – the `releases` profile – to become active during the Release process. -->
-            <goals>install</goals>
+            <goals>install</goals><!-- just don't deploy... -->
           </configuration>
         </plugin>
       </plugins>
@@ -160,7 +160,7 @@
   <scm>
     <url>https://github.com/daggerok/java-ee-microservices</url>
     <connection>scm:git:https://github.com/daggerok/java-ee-microservices.git</connection>
-    <tag>v1.0.0</tag>
+    <tag>master</tag>
   </scm>
 
   <profiles>
