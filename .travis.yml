@@ -28,12 +28,10 @@ script:
 - export root=$(pwd)
 #
 - ./mvnw >/dev/null
-- ./mvnw
-#
-- ./mvnw >/dev/null
 - ./mvnw -pl :parent -Pup
 - docker-compose logs -ft &
 - wait_for 80 8080
-- http -a anything:here :8080/blog/health
+- sleep 15s
+- http :8080/blog/health
 - ./mvnw -pl :parent -Pdown
 - stop_any 80 8080
