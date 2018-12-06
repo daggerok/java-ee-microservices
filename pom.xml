@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <url>http://github.con/daggerok/java-ee-microservices</url>
@@ -17,12 +15,6 @@
     <module>blog-ear</module>
     <module>blog</module>
   </modules>
-
-  <scm>
-    <url>https://github.com/daggerok/java-ee-microservices</url>
-    <connection>scm:git:https://github.com/daggerok/java-ee-microservices.git</connection>
-    <tag>HEAD</tag>
-  </scm>
 
   <properties>
     <java.version>1.8</java.version>
@@ -96,7 +88,6 @@
     </dependencies>
   </dependencyManagement>
 
-
   <build>
     <defaultGoal>clean install</defaultGoal>
     <pluginManagement>
@@ -159,11 +150,18 @@
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <!-- releaseProfiles configuration will actually force a Maven profile
               – the `releases` profile – to become active during the Release process. -->
+            <goals>install</goals>
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
   </build>
+
+  <scm>
+    <url>https://github.com/daggerok/java-ee-microservices</url>
+    <connection>scm:git:https://github.com/daggerok/java-ee-microservices.git</connection>
+    <tag>master</tag>
+  </scm>
 
   <profiles>
     <profile>
