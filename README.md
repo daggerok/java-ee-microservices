@@ -3,6 +3,6 @@ JavaEE microservices
 
 ```bash
 ./mvnw clean ; ./mvnw ; ./mvnw -pl :parent -Pup ; docker-compose logs -ft
-http :8080/blog/health
+http :8080/ui/health
 ./mvnw -pl :parent -Pdown
 ```
