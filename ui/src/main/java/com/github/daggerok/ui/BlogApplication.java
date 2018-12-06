@@ -25,7 +25,7 @@ public class BlogApplication implements SparkApplication {
     get("/health", (request, response) -> {
       response.header(CONTENT_TYPE, APPLICATION_JSON);
       return singletonMap("status", "ui is UP");
-    }, JsonConverter.get());
+    }, Json.gson::toJson);
 
     // solution 1: redirect
     /*
