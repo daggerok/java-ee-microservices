@@ -1,0 +1,18 @@
+version: '2.1'
+services:
+  blog:
+    build:
+      context: ./blog
+      dockerfile: ./Dockerfile
+    ports:
+    - '5005:5005'
+    - '8080:8080'
+    - '9990:9990'
+    networks:
+      my.public.network.com:
+        aliases:
+        - blog
+    #mem_limit: 786432000 # container limit: 700Mb (700 * 1024 * 1024)
+networks:
+  my.public.network.com:
+    driver: bridge

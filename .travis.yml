@@ -1,0 +1,39 @@
+git:
+  depth: false
+
+notifications:
+  email: false
+
+language: java
+jdk: oraclejdk8
+
+env:
+  global:
+  - TERM=dumb
+
+addons:
+  apt:
+    packages:
+    - bash
+    - curl
+    - python-pip
+
+install: true
+before_install:
+- sudo pip install httpie >/dev/null 2>&1
+- source <(curl -s https://raw.githubusercontent.com/daggerok/bash-functions/master/main.bash)
+- stop_any 80 8080 >/dev/null
+
+script:
+- export root=$(pwd)
+#
+- ./mvnw >/dev/null
+- ./mvnw
+#
+- ./mvnw >/dev/null
+- ./mvnw -pl :parent -Pup
+- docker-compose logs -ft &
+- wait_for 80 8080
+- http -a anything:here :8080/blog/health
+- ./mvnw -pl :parent -Pdown
+- stop_any 80 8080
