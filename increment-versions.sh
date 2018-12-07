@@ -2,4 +2,5 @@
 mvn --batch-mode \
   release:prepare \
   release:perform \
-  release:clean
+  release:clean \
+    -DgenerateBackupPoms=false
